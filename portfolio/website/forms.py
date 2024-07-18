@@ -4,5 +4,4 @@ from .models import Email
 class EmailForm(forms.ModelForm):
     class Meta:
         model = Email
-        fields = ['email']
-        
+        fields = ['name', 'email', 'message']

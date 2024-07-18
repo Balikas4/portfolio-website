@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.contrib.staticfiles import finders
+from django.contrib import messages
 from .forms import EmailForm
 
 def home(request):
@@ -8,7 +9,8 @@ def home(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('download_cv')
+            messages.success(request, 'Thank you! Your message has been sent.')
+            return redirect('home')  # Redirect to the same page to refresh
     else:
         form = EmailForm()
 
@@ -25,5 +27,3 @@ def download_cv(request):
         response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
         return response
     
-def turbo(request):
-    return render(request, 'turbo.html')
