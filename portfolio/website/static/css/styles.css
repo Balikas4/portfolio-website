@@ -193,7 +193,7 @@
   
   .btn-primary.green { background-color: var(--dark-green); }
   
-  .btn-primary.green:is(:hover, :focus) { background-color: var(--sea-green); }
+  .btn-primary.green:is(:hover, :focus) { background-color: var(--emerald-green); }
   
   .img-cover {
     width: 100%;
@@ -237,7 +237,7 @@
     position: fixed;
     padding-block: 15px;
     width: 100%;
-    background-color: var(--black);
+    background-color: transparent;
     height: 65px;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -258,8 +258,8 @@
   
   .logo {
     color: var(--white);
-    font-family: var(--ff-poppins);
-    font-size: 2.4rem;
+    font-family: var(--ff-pixelify-sans);
+    font-size: 3.4rem;
   }
   
   .nav-toggle-btn { font-size: 3rem; }
@@ -295,7 +295,7 @@
     transition: var(--transition-1);
   }
   
-  .navbar-link:is(:hover, :focus) { color: var(--sea-green); }
+  .navbar-link:is(:hover, :focus) { color: var(--emerald-green); }
   
   .navbar .btn {
     margin-block-start: 15px;
@@ -317,14 +317,21 @@
   }
   
   .hero {
-    background-image: url("../images/hero-bkg.png"); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    position: relative;
     padding-block: 100px var(--section-padding);
     min-height: 100vh;
     display: grid;
     place-items: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
+  }
+  
+  .hero canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the canvas behind other content */
   }
   
   
@@ -698,7 +705,10 @@
   
   }
   
-  
+  .header.active,
+  .header.nav-active {
+    background-color: var(--black);
+  }
   
   
   

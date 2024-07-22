@@ -10,7 +10,10 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'site.webmanifest' %}">
 
   <!-- 
     - custom css link
@@ -34,8 +37,8 @@
   <header class="header" data-header>
     <div class="container">
 
-      <a href="#home">
-        <h1 class="logo">Balys Leimontas</h1>
+      <a href="">
+        <h1 class="logo">Balys</h1>
       </a>
 
       <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
@@ -91,6 +94,7 @@
       -->
 
       <section class="hero" id="home">
+          <canvas></canvas>
           <div class="hero-content">
 
             <h2 class="hero-title">
@@ -103,7 +107,7 @@
             </p>
 
             <div class="btn-group">
-              <a href="#contact" class="btn btn-primary blue">Contact me</a>
+              <a href="#contact" class="btn btn-primary green">Contact me</a>
 
               <a href="#about" class="btn">About Me</a>
             </div>
@@ -187,10 +191,10 @@
           <ul class="portfolio-list">
 
             <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./static/images/portfolio-1.png')">
+              <a href="https://www.upupam.world" class="portfolio-card" style="background-image: url('./static/images/portfolio-1.png')">
                 <div class="card-content">
 
-                  <p class="card-subtitle">UPUPAM</p>
+                  <p class="card-subtitle">UPUPAM.world</p>
 
                   <h3 class="h3 card-title">Web App Platform for Fashion</h3>
 
@@ -205,7 +209,7 @@
             </li>
 
             <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./static/images/portfolio-2.jpg')">
+              <a href="https://github.com/Balikas4/Trading_strategy_tester" class="portfolio-card" style="background-image: url('./static/images/portfolio-2.jpg')">
                 <div class="card-content">
 
                   <p class="card-subtitle">Python Trade Bot</p>
@@ -374,7 +378,7 @@
 
           <div class="contact-card">
 
-            <p class="card-subtitle">Don't be shy</p>
+            <p class="card-subtitle">Contact</p>
 
             <h2 class="h2 section-title">Drop Me a Line</h2>
 
@@ -472,7 +476,7 @@
     <div class="container">
 
       <p class="copyright">
-        &copy; 2024 <a href="#" class="copyright-link">balikas4</a>. All Rights Reseverd
+        &copy; 2024 <a href="https://github.com/Balikas4" class="copyright-link">Balikas4</a>. All Rights Reseverd
       </p>
 
       <ul class="footer-list">
@@ -561,6 +565,59 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialising the canvas
+      var canvas = document.querySelector('canvas'),
+          ctx = canvas.getContext('2d');
+  
+      // Setting the width and height of the canvas
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+  
+      // Setting up the letters
+      var letters = 'BALIKAS4';
+      letters = letters.split('');
+  
+      // Setting up the columns
+      var fontSize = 10,
+          columns = canvas.width / fontSize;
+  
+      // Setting up the drops
+      var drops = [];
+      for (var i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+  
+      // Setting up the draw function
+      function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < drops.length; i++) {
+          var text = letters[Math.floor(Math.random() * letters.length)];
+          ctx.fillStyle = '#0f0';
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          drops[i]++;
+          if (drops[i] * fontSize > canvas.height && Math.random() > .99) {
+            drops[i] = 0;
+          }
+        }
+      }
+  
+      // Loop the animation
+      setInterval(draw, 25);
+  
+      // Resize canvas when window is resized
+      window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = canvas.width / fontSize;
+        drops = [];
+        for (var i = 0; i < columns; i++) {
+          drops[i] = 1;
+        }
+      });
+    });
+  </script>
 </body>
 </html>

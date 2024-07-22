@@ -11,14 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from .local_settings import SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR.joinpath(STATIC_URL)
+STATIC_ROOT = BASE_DIR / 'static_root'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.joinpath(MEDIA_URL)
+MEDIA_ROOT = BASE_DIR / 'media_root'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'website/static',
@@ -30,7 +31,7 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(!d+e8&!ngtmw2n9danu5q^vira#3h0nmk96lsodh04y%l$_jx'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
