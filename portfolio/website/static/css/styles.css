@@ -191,9 +191,9 @@
     transition: var(--transition-2);
   }
   
-  .btn-primary.blue { background-color: var(--dark-green); }
+  .btn-primary.green { background-color: var(--dark-green); }
   
-  .btn-primary.blue:is(:hover, :focus) { background-color: var(--sea-green); }
+  .btn-primary.green:is(:hover, :focus) { background-color: var(--sea-green); }
   
   .img-cover {
     width: 100%;
@@ -237,7 +237,7 @@
     position: fixed;
     padding-block: 15px;
     width: 100%;
-    background-color: var(--space-cadet);
+    background-color: var(--black);
     height: 65px;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -288,6 +288,7 @@
   
   .navbar-link {
     display: flex;
+    gap: 4px;
     color: var(--white);
     font-family: var(--ff-pixelify-sans);
     padding-block: 3px;
@@ -297,7 +298,6 @@
   .navbar-link:is(:hover, :focus) { color: var(--sea-green); }
   
   .navbar .btn {
-    background-color: var(--sea-green);
     margin-block-start: 15px;
   }
   
@@ -311,6 +311,10 @@
   
   .elem,
   .rotate-img { display: none; }
+
+  .hero-content {
+    margin: 0px 10px;
+  }
   
   .hero {
     background-image: url("../images/hero-bkg.png"); 
@@ -784,7 +788,9 @@
       align-items: center;
     }
   
-    .hero-content { text-align: left; }
+    .hero-content { 
+      text-align: left; 
+    }
   
     .btn-group { justify-content: flex-start; }
   
