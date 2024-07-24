@@ -19,7 +19,7 @@ services:
     # volumes - disko sąsaja, kur konteineris sinchronizuos savo failus su realiais diske esančiais failais. Šių failų nereikės kopijuoti su cp. Taip pat panašiai sinchronizuosime ir `static` bei `media` katalogus su nginx konteineriu.
     volumes:
       - ./portfolio:/app
-      - ./portfolio/db.sqlite3:/app/db.sqlite3
+      - ./portfolio/db.sqlite3:/app/portfolio/db.sqlite3
     # vykdome komandas startuojant konteineriui, o ne konstruojant to konteinerio paveiksliuką (image). Rekomenduojame šias komandas iš Dockerfile pašalinti arba užkomentuoti.
     command: >
       bash -c "python manage.py migrate &&
@@ -38,7 +38,7 @@ services:
     # kokius portus atidaryti - jeigu reikia, įtraukite ir SSL
     ports:
       - 8080:80
-      # - 8443:443
+      - 8443:443
     # nurodome tinklo sąsają su pagrindiniu projekto konteineriu `dev`.
     links:
       - dev:portfolio
@@ -46,13 +46,13 @@ services:
     volumes:
       - ./portfolio/media_root:/app/media
       - ./portfolio/static_root:/app/static
-      # - /etc/letsencrypt:/etc/letsencrypt
-      # - /var/www/certbot:/var/www/certbot
-  # certbot:
-  #   image: certbot/certbot
-  #   volumes:
-  #     - /etc/letsencrypt:/etc/letsencrypt
-  #     - /var/www/certbot:/var/www/certbot
-  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-  #   depends_on:
-  #     - nginx
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/www/certbot:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/www/certbot:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    depends_on:
+      - nginx
