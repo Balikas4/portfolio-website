@@ -19,7 +19,7 @@ services:
     # volumes - disko sąsaja, kur konteineris sinchronizuos savo failus su realiais diske esančiais failais. Šių failų nereikės kopijuoti su cp. Taip pat panašiai sinchronizuosime ir `static` bei `media` katalogus su nginx konteineriu.
     volumes:
       - ./portfolio:/app
-      - ./portfolio/db.sqlite3:/app/portfolio/db.sqlite3
+      - ./portfolio/db.sqlite3:/app/db.sqlite3
     # vykdome komandas startuojant konteineriui, o ne konstruojant to konteinerio paveiksliuką (image). Rekomenduojame šias komandas iš Dockerfile pašalinti arba užkomentuoti.
     command: >
       bash -c "python manage.py migrate &&
@@ -30,7 +30,7 @@ services:
     # surenkame nginx konteinerį su mūsų projekto .conf
     build: ./nginx/
     # savo surinkto nginx image paveiksliuko pavadinimas ir tagas
-    image: nginx:project
+    image: nginx:porftolio
     # konteinerio pavadinimas
     container_name: portfolio.nginx
     # jeigu konteineris pakibtų, jį visada perkrausime
@@ -38,21 +38,21 @@ services:
     # kokius portus atidaryti - jeigu reikia, įtraukite ir SSL
     ports:
       - 8080:80
-      - 443:443
+      # - 8443:443
     # nurodome tinklo sąsają su pagrindiniu projekto konteineriu `dev`.
     links:
-      - dev:project
+      - dev:portfolio
     # sinchronizuojame failus tarp konteinerio ir projekto `static` ir `media` katalogų. Šiuo atveju, netgi padarius `python manage.py collectstatic` iš projekto `dev` konteinerio, `nginx` konteineryje atitinkami failai taip pat atsinaujins.
     volumes:
       - ./portfolio/media_root:/app/media
       - ./portfolio/static_root:/app/static
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/www/certbot:/var/www/certbot
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/www/certbot:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    depends_on:
-      - nginx
+      # - /etc/letsencrypt:/etc/letsencrypt
+      # - /var/www/certbot:/var/www/certbot
+  # certbot:
+  #   image: certbot/certbot
+  #   volumes:
+  #     - /etc/letsencrypt:/etc/letsencrypt
+  #     - /var/www/certbot:/var/www/certbot
+  #   entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+  #   depends_on:
+  #     - nginx
