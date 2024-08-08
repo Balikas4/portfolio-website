@@ -18,12 +18,12 @@ def home(request):
 
 def download_cv(request):
     # Use Django's staticfiles finders to locate the file
-    cv_path = finders.find('download/cv.pdf')
+    cv_path = finders.find('download/balys.leimontas.pdf')
     if not cv_path:
         raise Http404("CV file not found")
 
     with open(cv_path, 'rb') as cv:
         response = HttpResponse(cv.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
+        response['Content-Disposition'] = 'attachment; filename="balys.leimontas.pdf"'
         return response
     
