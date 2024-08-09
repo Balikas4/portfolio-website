@@ -25,7 +25,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'website/static',
 ]
 
-
+CSRF_TRUSTED_ORIGINS = ['https://webdevbalys.online', 'https://www.webdevbalys.online']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -34,7 +34,7 @@ STATICFILES_DIRS = [
 SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['webdevbalys.online', 'www.webdevbalys.online', 'localhost']
 
