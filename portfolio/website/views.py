@@ -45,3 +45,6 @@ def download_cv(request):
         response = HttpResponse(cv.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="balys.leimontas.pdf"'
         return response
+
+def example1(request):
+    return render(request, 'example1.html')  # This will render your new HTML template
