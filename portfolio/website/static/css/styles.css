@@ -347,6 +347,7 @@
     font-size: var(--fs-1);
     font-weight: inherit;
     margin-block-end: 8px;
+    color: white;
   }
   
   .hero-text { margin-block-end: 25px; }
