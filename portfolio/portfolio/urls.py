@@ -26,3 +26,5 @@ urlpatterns = [
 
 urlpatterns.extend(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
 urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
+
+handler404 = 'website.views.custom_404_view'

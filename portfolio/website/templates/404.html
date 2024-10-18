@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oops! Page not found.">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .error-page {
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <h1>Oops! Page not found (404)</h1>
+        <p>Sorry, the page you're looking for doesn't exist.</p>
+    </div>
+    <section class="hero">
+        <canvas></canvas>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialising the canvas
+            var canvas = document.querySelector('canvas'),
+                ctx = canvas.getContext('2d');
+
+            // Setting the width and height of the canvas
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Setting up the letters
+            var letters = 'BALIKAS4';
+            letters = letters.split('');
+
+            // Setting up the columns
+            var fontSize = 10,
+                columns = canvas.width / fontSize;
+
+            // Setting up the drops
+            var drops = [];
+            for (var i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+
+            // Setting up the draw function
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < drops.length; i++) {
+                    var text = letters[Math.floor(Math.random() * letters.length)];
+                    ctx.fillStyle = '#0f0';
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    drops[i]++;
+                    if (drops[i] * fontSize > canvas.height && Math.random() > .99) {
+                        drops[i] = 0;
+                    }
+                }
+            }
+
+            // Loop the animation
+            setInterval(draw, 25);
+
+            // Resize canvas when window is resized
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = canvas.width / fontSize;
+                drops = [];
+                for (var i = 0; i < columns; i++) {
+                    drops[i] = 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
