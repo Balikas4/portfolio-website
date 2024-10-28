@@ -484,14 +484,78 @@
     border-radius: inherit;
   }
   
+
+
+
+  /*-----------------------------------*\
+    #PRICE
+  \*-----------------------------------*/
   
-  
-  
-  
+  /* Button Styles */
+
+  .dual-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dual-choice button.active {
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* Container Content Styles */
+  .prices-container .container-content {
+    display: none;
+  }
+
+  .prices-container .container-content.active {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .price-grid {
+    width: 100%;
+    background-color: var(--dark-green);
+    border-radius: 20px;
+    min-height: 210px;
+    padding: 20px 10px;
+  }
+
+  .price-grid h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--white);
+    font-family: var(--ff-pixelify-sans);
+  }
+
+  .price-grid p {
+    font-size: 18px;
+    color: var(--cadet-blue-crayola);
+  }
+
+  .price .section-subtitle {
+    margin-bottom: 20px;
+  }
+
+  .price .section-title , .price .dual-choice{
+    margin-bottom: 70px;
+  }
+
+
   /*-----------------------------------*\
     #CONTACT
   \*-----------------------------------*/
   
+
+
+
+
+
   .contact-card {
     background-color: var(--dark-green);
     padding: 50px 25px;
@@ -651,8 +715,6 @@
   
   
   
-  
-  
   /*-----------------------------------*\
     #MEDIA QUERIES
   \*-----------------------------------*/
@@ -669,10 +731,25 @@
   
     .portfolio-list li:nth-child(even) .card-content { margin-inline-start: 50%; }
   
+
+    /**
+    * PRICE
+    */
+
+    .prices-container .container-content.active {
+      flex-direction: row;
+    }
+
+    .price-grid {
+      width: 25%;
+      min-height: 260px;
+    }
+
+    .dual-choice {
+      flex-direction: row;
+      justify-content: center;
+    }
   }
-  
-  
-  
   
   
   /**
@@ -927,19 +1004,6 @@
     .contact-item { gap: 25px; }
   
     .contact-icon { padding: 30px; }
-  
-  
-  
-    /**
-     * BLOG
-     */
-  
-    .blog { padding-block-end: 180px; }
-  
-    .blog-list {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
   
     
   

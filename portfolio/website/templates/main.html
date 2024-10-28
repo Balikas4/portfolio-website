@@ -414,10 +414,50 @@
 
         </div>
       </section>
-
-
-
-
+      {% comment %} <section class="section price" id="price">
+        <div class="container">
+          <p class="section-subtitle">Pricing Plans</p>
+      
+          <h2 class="h2 section-title">Here's how I charge for creating your dream website</h2>
+      
+          <div class="dual-choice">
+            <button id="custom-button" class="btn btn-primary green">Tailored Masterpiece</button>
+            <button id="standart-button" class="btn">Website in a Day</button>
+          </div>
+      
+          <div class="prices-container">
+            <div id="custom-content" class="container-content active">
+              <div class="price-grid">
+                <h2>Price</h2>
+                <p>Completely flexible—because your vision is unique!</p>
+              </div>
+              <div class="price-grid">
+                <h2>Delivery Time</h2>
+                <p>We'll work around your timeline to craft the perfect result.</p>
+              </div>
+              <div class="price-grid">
+                <h2>Tech Stack</h2>
+                <p>Cutting-edge and tailored to your needs—no limits, just innovation.</p>
+              </div>
+            </div>
+      
+            <div id="standart-content" class="container-content">
+              <div class="price-grid">
+                <h2>Price</h2>
+                <p>100 EUR upfront, with a 10 EUR/month subscription for hosting and security. Simple, fast, and affordable.</p>
+              </div>
+              <div class="price-grid">
+                <h2>Delivery Time</h2>
+                <p>Ready in just 1 day! No need to wait for awesome results.</p>
+              </div>
+              <div class="price-grid">
+                <h2>Tech Stack</h2>
+                <p>Powered by Python, Django, Docker, JavaScript, and more—modern tech for a modern site!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> {% endcomment %}
 
       <!-- 
         - #CONTACT
@@ -669,5 +709,27 @@
       });
     });
   </script>
+  {% comment %} <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const customButton = document.getElementById('custom-button');
+      const standartButton = document.getElementById('standart-button');
+      const customContent = document.getElementById('custom-content');
+      const standartContent = document.getElementById('standart-content');
+    
+      customButton.addEventListener('click', function() {
+        customButton.className = 'btn btn-primary green';
+        standartButton.className = 'btn';
+        customContent.classList.add('active');
+        standartContent.classList.remove('active');
+      });
+    
+      standartButton.addEventListener('click', function() {
+        standartButton.className = 'btn btn-primary green';
+        customButton.className = 'btn';
+        standartContent.classList.add('active');
+        customContent.classList.remove('active');
+      });
+    });    
+  </script> {% endcomment %}
 </body>
 </html>
