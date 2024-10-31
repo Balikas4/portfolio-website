@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darželis</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&family=Barlow:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -28,7 +29,7 @@
             <!-- Navigation Links -->
             <nav class="navbar container">
                 <ul class="navbar-list">
-                    <li><a href="#about" class="navbar-link" data-nav-link><p>Apie mus</p></a></li>
+                    <li><a href="#about" class="navbar-link" data-nav-link><p>Apie Mus</p></a></li>
                     <li><a href="#education" class="navbar-link" data-nav-link><p>Ugdymas</p></a></li>
                     <li><a href="#gallery" class="navbar-link" data-nav-link><p>Galerija</p></a></li>
                     <li><a href="#admission" class="navbar-link" data-nav-link><p>Priėmimas</p></a></li>
@@ -42,16 +43,17 @@
         <section id="about">
             <div class="container">
                 <img class="hero-img" src="{% static "images/kid_light.png" %}" alt="hero image">
-                <h1>Sveiki atvykę į smagų daržęlį</h1>
-                <p>Kasdien laiką leidžiame smagiai, žaidžiame linksmus žaidimus</p>
+                <div class="hero-text">
+                    <h1>Sveiki atvykę į smagų daržęlį</h1>
+                    <p>Kasdien laiką leidžiame smagiai, žaidžiame linksmus žaidimus</p>
+                </div>
             </div>
         </section>
         
         <section id="education">
             <div class="container">
                 <h2>Ugdymas</h2>
-                <p>Darželyje vykdomas profesionalus ugdymas, didzžiulis dėmesys skiriamas vaikams</p>
-            </div>
+                <p>Darželyje vykdomas profesionalus ugdymas, didžiulis dėmesys skiriamas vaikams.</p>            </div>
         </section>
 
         <section id="gallery" class="main-gallery">
@@ -77,17 +79,19 @@
         <section id="admission">
             <div class="container">
                 <h2>Reikalingi dokumentai</h2>
-                <div class="admission-item">
-                    <img src="{% static 'images/office-svgrepo-com.svg' %}" alt="Admission Requirement 1">
-                    <p class="center-text">Sutratis</p>
-                </div>
-                <div class="admission-item">
-                    <img class="admission-item" src="{% static 'images/order-svgrepo-com.svg' %}" alt="Admission Requirement 2">
-                    <p class="center-text">Gydytojo pažyma</p>
-                </div>
-                <div class="admission-item">
-                    <img class="admission-item" src="{% static 'images/business-card-svgrepo-com.svg' %}" alt="Admission Requirement 3">
-                    <p class="center-text">Vaiko gimimo liudijimas</p>
+                <div class="admission-items">
+                    <div class="admission-item">
+                        <img src="{% static 'images/office-svgrepo-com.svg' %}" alt="Admission Requirement 1">
+                        <p class="center-text">Sutartis</p>
+                    </div>
+                    <div class="admission-item">
+                        <img class="admission-item" src="{% static 'images/order-svgrepo-com.svg' %}" alt="Admission Requirement 2">
+                        <p class="center-text">Gydytojo pažyma</p>
+                    </div>
+                    <div class="admission-item">
+                        <img class="admission-item" src="{% static 'images/business-card-svgrepo-com.svg' %}" alt="Admission Requirement 3">
+                        <p class="center-text">Vaiko gimimo liudijimas</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -108,7 +112,7 @@
                         <label for="message">Žinutė:</label>
                         <textarea id="message" name="message" required></textarea>
                         
-                        <button type="submit">Siųsti</button>
+                        <button type="submit">Siųsti Žinutę</button>
                     </form>
                 </div>
                 <!-- Google Maps Section -->

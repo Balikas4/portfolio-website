@@ -167,7 +167,15 @@ section {scroll-margin-top: 70px; }
     font-family: var(--ff-poppins);
     font-size: 20px;
     text-align: center;
-  }
+}
+
+ .container h1, .container h2 {
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
 
 
 
@@ -228,7 +236,6 @@ section {scroll-margin-top: 70px; }
 
 .navbar-link {
     color: #FFF;
-    padding: 1em;
     width: 100%;
     text-align: center;
     display: flex;
@@ -341,10 +348,15 @@ main {
 
 /* ADMISSION */
 .admission-item img {
+    max-width: 420px;
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.admission-item {
+    justify-items: center;
 }
 
 /* CONTACT */
@@ -387,24 +399,56 @@ footer {
 
 
 /* Styles for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .container {
-        padding: 1em 2em;
+        padding: 40px 20px;
+    }
+
+    #about .container {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .hero-img {
+        max-width: 50%;
+    }
+
+    .hero-text {
+        align-content: center;
+    }
+
+    .container h1, .container h2 {
+        font-size: 34px;
+
+    }
+    
+    .conainer p {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+    .container {
+        max-width: 1200px;
+        margin: auto;
     }
 
     .nav-toggle-btn {
         display: none; /* Hide toggle button on larger screens */
     }
-    
     .navbar {
         display: flex; /* Show navbar by default on larger screens */
         flex-direction: row;
         position: static;
         background: transparent;
         width: auto;
+        padding: 0px;
     }
 
     .navbar-list {
+        display: flex;
         flex-direction: row;
         gap: 2em;
     }
@@ -414,5 +458,23 @@ footer {
         padding: 0;
         width: auto;
         text-align: left;
+    }
+
+    .navbar-link p {
+        margin-bottom: 0px;
+    }
+
+    .admission-items {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container h1, .container h2 {
+        font-size: 44px;
+
+    }
+    
+    .conainer p {
+        font-size: 38px;
     }
 }
