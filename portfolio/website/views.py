@@ -50,4 +50,7 @@ def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 
 def example1(request):
-    return render(request, 'example1.html')  # This will render your new HTML template
+    return render(request, 'example1.html')
+
+def example2(request):
+    return render(request, 'example2.html')

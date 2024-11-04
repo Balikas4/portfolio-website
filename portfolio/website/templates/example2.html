@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moksliukas</title>
+    <link rel="icon" href="{% static 'images/example2/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;700;900&family=Open+Sans:wght@400;700;900&family=Barlow:wght@400;700;800;900&family=Poppins:wght@400;700;900&family=Roboto:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <a href="#about">
+                <img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img>
+            </a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="about">
+            <div class="container center-flex">
+                <img class="hero-img" src="{% static "images/example2/student-graduation-dance-svgrepo-com.svg" %}" alt="hero image">
+                <div class="hero-text">
+                    <h1 class="hero-text">MOKSLIUKAS</h1>
+                    <h2>Bottom text 1</h2>
+                    <h2>Bottom text 2</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="groups" class="groups">
+            <div class="container center-flex">
+                <h1>GRUPES</h1>
+                <div class="group-div">
+                    <div class="group-item">
+                        <img src={% static "images/example2/abacus-svgrepo-com.svg" %} alt="Group Image 1">
+                        <h2>Group 1</h2>
+                        <div class="seperator"></div>
+                        <p>aasdfasdfasdf</p>
+                    </div>
+                    <div class="group-item">
+                        <img src={% static "images/example2/abc-svgrepo-com.svg" %} alt="Group Image 2">
+                        <h2>Group 2</h2>
+                        <div class="seperator"></div>
+                        <p>asdasdasdasd</p>
+                    </div>
+                    <div class="group-item">
+                        <img src={% static "images/example2/soccer-ball-svgrepo-com.svg" %} alt="Group Image 3">
+                        <h2>Group 3</h2>
+                        <div class="seperator"></div>
+                        <p>asdasdasdasd</p>
+                    </div>
+                    <div class="group-item">
+                        <img src={% static "images/example2/xylophone-svgrepo-com.svg" %} alt="Group Image 4">
+                        <h2>Group 4</h2>
+                        <div class="seperator"></div>
+                        <p>asdasdasasd</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <section id="schedule">
+            <div class="container center-flex">
+                <h1>TVARKARASTIS</h1>
+                <div class="schedule-grid">
+                    <!-- Pirmadienis Column -->
+                    <div class="schedule-column">
+                        <h3>Pirmadienis</h3>
+                        <p>📚 Skaitymo laikas</p>
+                        <p>🎨 Meno dirbtuvės</p>
+                        <p>🌳 Nuotykiai lauke</p>
+                        <p>🥪 Užkandžiai ir valgiai</p>
+                    </div>
+        
+                    <!-- Antradienis Column -->
+                    <div class="schedule-column">
+                        <h3>Antradienis</h3>
+                        <p>🎶 Muzikos pamoka</p>
+                        <p>⚽ Sporto žaidimai</p>
+                        <p>🌞 Ryto ratas</p>
+                        <p>🍎 Stiprinamės: pusryčiai ir pietūs</p>
+                    </div>
+        
+                    <!-- Trečiadienis Column -->
+                    <div class="schedule-column">
+                        <h3>Trečiadienis</h3>
+                        <p>🧩 Logikos užduotys</p>
+                        <p>🕺 Šokiai ir judesiai</p>
+                        <p>🌿 Gamta ir pažintis su aplinka</p>
+                        <p>🍲 Pietūs ir ramybės laikas</p>
+                    </div>
+        
+                    <!-- Ketvirtadienis Column -->
+                    <div class="schedule-column">
+                        <h3>Ketvirtadienis</h3>
+                        <p>📖 Pasakų skaitymas</p>
+                        <p>🎭 Teatro dirbtuvės</p>
+                        <p>🏞 Išvykos ir tyrinėjimai</p>
+                        <p>🍌 Sveiki užkandžiai</p>
+                    </div>
+        
+                    <!-- Penktadienis Column -->
+                    <div class="schedule-column">
+                        <h3>Penktadienis</h3>
+                        <p>🎵 Ritmo ir muzikos žaidimai</p>
+                        <p>🎲 Kūrybinės veiklos</p>
+                        <p>🏃 Žaidimai kieme</p>
+                        <p>🍲 Pusryčiai, pietūs ir savaitgalio paruošimas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="admission">
+            <div class="container center-flex">
+                <h1>REIKALINGI DOKUMENTAI</h1>
+                <div class="admission-items">
+                    <div class="admission-item">
+                        <img src="{% static 'images/example2/information-svgrepo-com.svg' %}" alt="Admission Requirement 1">
+                        <div class="number-seperator">
+                        <p class="center-text">Sutartis</p>
+                    </div>
+                    <div class="admission-item">
+                        <img src="{% static 'images/example2/recruitment-svgrepo-com.svg' %}" alt="Admission Requirement 2">
+                        <div class="number-seperator">
+                        <p class="center-text">Gydytojo pažyma</p>
+                    </div>
+                    <div class="admission-item">
+                        <img src="{% static 'images/example2/invite-friends-svgrepo-com.svg' %}" alt="Admission Requirement 3">
+                        <div class="number-seperator">
+                        <p class="center-text">Vaiko gimimo liudijimas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container center-flex">
+                <h1>SUSISIEKIME</h1>
+                
+                <div class="contact-content">
+                    <!-- Contact Form -->
+                    <form action="/submit-form" method="POST">
+                        <label for="name">Vardas:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">El. paštas:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Žinutė:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        
+                        <button type="submit">Siųsti Žinutę</button>
+                    </form>
+                </div>
+                <!-- Google Maps Section -->
+                <div class="map-section">
+                    <h2>Mus rasite</h2>
+                    <p>Šventaragio g., Vilnius, 01143 Vilniaus m. sav.</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d815.4247178711701!2d25.288132033067384!3d54.685527067431686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941734223bd9%3A0xb3b1c213c35f7e61!2sVilnius%20Cathedral!5e0!3m2!1sen!2slt!4v1730284665526!5m2!1sen!2slt"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="container center-flex">
+            <p>&copy; 2024 Darželis. Visos teisės saugomos.</p>
+            <p><a href="#about">Atgal į viršų</a></p>
+            <a href="#about"><img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img></a>
+        </div>
+    </footer>
+    <script src="{% static 'js/example2.js' %}"></script>
+</body>
+</html>

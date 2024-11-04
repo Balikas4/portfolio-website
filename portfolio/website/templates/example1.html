@@ -8,7 +8,7 @@
     <title>Darželis</title>
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&family=Barlow:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&family=Barlow:wght@400;700;800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -52,8 +52,19 @@
         
         <section id="education">
             <div class="container">
-                <h2>Ugdymas</h2>
-                <p>Darželyje vykdomas profesionalus ugdymas, didžiulis dėmesys skiriamas vaikams.</p>            </div>
+                <div class="text-box">
+                    <h2>Ugdymas</h2>
+                    <p>Darželyje vykdomas profesionalus ugdymas, didžiulis dėmesys skiriamas vaikams.</p>
+                    <ul>
+                        <li><strong>A.</strong> Kuriame šiltą ir palaikančią aplinką, kurioje vaikai jaučiasi mylimi.</li>
+                        <li><strong>B.</strong> Deriname mokymą su žaidimu, kad vaikai augtų harmoningai.</li>
+                        <li><strong>C.</strong> Skatiname nuoseklų ir tęstinį mokymosi procesą.</li>
+                    </ul>                    
+                </div>    
+                <div class="admission-item">
+                    <img src="{% static 'images/blocks-svgrepo-com 2.svg' %}" alt="Education 1">
+                </div>
+            </div>
         </section>
 
         <section id="gallery" class="main-gallery">
