@@ -252,35 +252,6 @@ header {
 }
 
 
-/* .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: var(--accent-aquamarine);
-    z-index: 1000;
-    transition: background 0.3s;
-    height: 70px;
-}
-
-.header.active {
-    background-color: var(--accent-golden-yellow);
-    color: #FFF;
-}
-
-.header > .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-ion-icon {
-    height: 50px;
-    width: 50px;
-} */
-
-
 /* Back to Top Button */
 /* [data-back-to-top] {
     position: fixed;
@@ -320,65 +291,10 @@ ion-icon {
     font-size: 42px;
 }
 
-/* main {
-    margin-top: 70px;
-} */
 
 /* EDUCATIUON */
 
-/* #education .container img {
-    text-align: center;
-}
-
-
-.text-box ul li {
-    margin-bottom: 4px;
-} */
-
-/* ABOUT */
-
-/* .hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-} */
-
-
-
-
-/* Navigation Bubbles */
-/* .navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
-}
-
-.bubble {
-    width: 10px;
-    height: 10px;
-    background-color: var(--accent-aquamarine);
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.bubble.active {
-    background-color: var(--accent-rosy-red);
-} */
-
 /* ADMISSION */
-/* .admission-item img {
-    max-width: 220px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.admission-item {
-    justify-items: center;
-    text-align: center;
-} */
 
 /* CONTACT */
 
