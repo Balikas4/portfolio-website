@@ -15,8 +15,8 @@
 
 <body>
     <header class="header" data-header>
-        <div class="container">
-            <a href="#about">
+        <div class="container" id="header">
+            <a href="#header">
                 <img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img>
             </a>
         </div>
@@ -25,50 +25,48 @@
     <main>
         <section id="about">
             <div class="container center-flex">
-                <img class="hero-img" src="{% static "images/example2/student-graduation-dance-svgrepo-com.svg" %}" alt="hero image">
+                <img class="hero-img" src="{% static "images/example2/student1.svg" %}" alt="hero image">
                 <div class="hero-text">
-                    <h1 class="hero-text">MOKSLIUKAS</h1>
-                    <h2>Bottom text 1</h2>
-                    <h2>Bottom text 2</h2>
+                    <h1 class="hero-text">MOKSLINČIUS</h1>
+                    <h2>Vaikų darželis</h2>
+                    <h2>Vilniaus širdyje</h2>
                 </div>
             </div>
         </section>
 
-        <section id="groups" class="groups">
-            <div class="container center-flex">
-                <h1>GRUPES</h1>
-                <div class="group-div">
-                    <div class="group-item">
-                        <img src={% static "images/example2/abacus-svgrepo-com.svg" %} alt="Group Image 1">
-                        <h2>Group 1</h2>
-                        <div class="seperator"></div>
-                        <p>aasdfasdfasdf</p>
-                    </div>
-                    <div class="group-item">
-                        <img src={% static "images/example2/abc-svgrepo-com.svg" %} alt="Group Image 2">
-                        <h2>Group 2</h2>
-                        <div class="seperator"></div>
-                        <p>asdasdasdasd</p>
-                    </div>
-                    <div class="group-item">
-                        <img src={% static "images/example2/soccer-ball-svgrepo-com.svg" %} alt="Group Image 3">
-                        <h2>Group 3</h2>
-                        <div class="seperator"></div>
-                        <p>asdasdasdasd</p>
-                    </div>
-                    <div class="group-item">
-                        <img src={% static "images/example2/xylophone-svgrepo-com.svg" %} alt="Group Image 4">
-                        <h2>Group 4</h2>
-                        <div class="seperator"></div>
-                        <p>asdasdasasd</p>
-                    </div>
+        <section id="groups" >
+            <div class="container center-flex groups">
+                <h1>GRUPĖS</h1>
+                <div class="group-item">
+                    <img src="{% static 'images/example2/abacus-svgrepo-com.svg' %}" alt="Group Image 1">
+                    <h2>Matematikos Magai</h2>
+                    <div class="seperator"></div>
+                    <p>Ši grupė ugdo meilę skaičiams ir problemų sprendimui žaidžiant su abakusu.</p>
                 </div>
+                <div class="group-item">
+                    <img src="{% static 'images/example2/abc-svgrepo-com.svg' %}" alt="Group Image 2">
+                    <h2>Kalbos Tyrinėtojai</h2>
+                    <div class="seperator"></div>
+                    <p>Įsitraukite į pasakojimų ir kūrybinių žaidimų pasaulį, ugdydami skaitymo ir rašymo įgūdžius.</p>
+                </div>
+                <div class="group-item">
+                    <img src="{% static 'images/example2/soccer-ball-svgrepo-com.svg' %}" alt="Group Image 3">
+                    <h2>Sporto Čempionai</h2>
+                    <div class="seperator"></div>
+                    <p>Pasiruoškite sportui! Ši grupė skatina komandą ir fizinį aktyvumą žaidžiant futbolą.</p>
+                </div>
+                <div class="group-item">
+                    <img src="{% static 'images/example2/xylophone-svgrepo-com.svg' %}" alt="Group Image 4">
+                    <h2>Muzikos Virtuozai</h2>
+                    <div class="seperator"></div>
+                    <p>Vaikai pažįsta garsus ir ritmus, naudodami instrumentus, tokius kaip ksilofonas.</p>
+                </div>                
             </div>
         </section>        
 
         <section id="schedule">
             <div class="container center-flex">
-                <h1>TVARKARASTIS</h1>
+                <h1>TVARKARAŠTIS</h1>
                 <div class="schedule-grid">
                     <!-- Pirmadienis Column -->
                     <div class="schedule-column">
@@ -124,18 +122,18 @@
                 <div class="admission-items">
                     <div class="admission-item">
                         <img src="{% static 'images/example2/information-svgrepo-com.svg' %}" alt="Admission Requirement 1">
-                        <div class="number-seperator">
-                        <p class="center-text">Sutartis</p>
+                        <div class="seperator"></div>
+                        <h3 class="center-text">Sutartis</h3>
                     </div>
                     <div class="admission-item">
                         <img src="{% static 'images/example2/recruitment-svgrepo-com.svg' %}" alt="Admission Requirement 2">
-                        <div class="number-seperator">
-                        <p class="center-text">Gydytojo pažyma</p>
+                        <div class="seperator"></div>
+                        <h3 class="center-text">Gydytojo pažyma</h3>
                     </div>
                     <div class="admission-item">
                         <img src="{% static 'images/example2/invite-friends-svgrepo-com.svg' %}" alt="Admission Requirement 3">
-                        <div class="number-seperator">
-                        <p class="center-text">Vaiko gimimo liudijimas</p>
+                        <div class="seperator"></div>
+                        <h3 class="center-text">Gimimo liudijimas</h3>
                     </div>
                 </div>
             </div>
@@ -144,8 +142,7 @@
         <section id="contact">
             <div class="container center-flex">
                 <h1>SUSISIEKIME</h1>
-                
-                <div class="contact-content">
+                <div class="message-section">
                     <!-- Contact Form -->
                     <form action="/submit-form" method="POST">
                         <label for="name">Vardas:</label>
@@ -160,9 +157,15 @@
                         <button type="submit">Siųsti Žinutę</button>
                     </form>
                 </div>
+                <div class="contact-info">
+                    <h3>Kontaktinė Informacija</h3>
+                    <p><a href="mailto:darzelis.moksliukas@gmail.com">darzelis.mokslincius@gmail.com</a></p>
+                    <p><a href="tel:+37060000000">+370 600 00000</a></p>
+                    <p>I - V : 8:00 - 18:00</p>
+                </div>
                 <!-- Google Maps Section -->
                 <div class="map-section">
-                    <h2>Mus rasite</h2>
+                    <h3>Mus rasite</h3>
                     <p>Šventaragio g., Vilnius, 01143 Vilniaus m. sav.</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d815.4247178711701!2d25.288132033067384!3d54.685527067431686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941734223bd9%3A0xb3b1c213c35f7e61!2sVilnius%20Cathedral!5e0!3m2!1sen!2slt!4v1730284665526!5m2!1sen!2slt"
@@ -181,9 +184,9 @@
     
     <footer>
         <div class="container center-flex">
-            <p>&copy; 2024 Darželis. Visos teisės saugomos.</p>
-            <p><a href="#about">Atgal į viršų</a></p>
-            <a href="#about"><img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img></a>
+            <p>&copy; 2024 Mokslinčius. Visos teisės saugomos.</p>
+            <p><a href="#header">Atgal į viršų</a></p>
+            <a href="#header"><img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img></a>
         </div>
     </footer>
     <script src="{% static 'js/example2.js' %}"></script>
