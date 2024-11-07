@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!--- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric.js Basic App</title>
+    <script src="https://cdn.jsdelivr.net/npm/fabric@4.5.1/dist/fabric.min.js"></script>
+    <script src="{% static 'js/fabric.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/fabric.css' %}">
+</head>
+<body>
+    <h1>Fabric.js Hello World</h1>
+
+    <!-- File Input for Image Upload -->
+    <input type="file" id="imageUpload" accept="image/*" />
+
+    <br><br>
+    
+    <canvas id="canvas" width="1000px" height="800px"></canvas>
+    <br>
+    <button id="downloadButton">Download as PNG</button>
+</body>
+</html>

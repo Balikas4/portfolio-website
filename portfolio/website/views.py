@@ -54,3 +54,6 @@ def example1(request):
 
 def example2(request):
     return render(request, 'example2.html')
+
+def fabric(request):
+    return render(request, 'fabric.html')
