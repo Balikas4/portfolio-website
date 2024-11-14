@@ -15,11 +15,13 @@
 
 <body>
     <header class="header" data-header>
-        <div class="container" id="header">
-            <a href="#header">
-                <img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img>
-            </a>
-        </div>
+        <section id="header">
+            <div class="container" id="header">
+                <a href="#header">
+                    <img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img>
+                </a>
+            </div>
+        </section>
     </header>
     
     <main>
@@ -35,32 +37,34 @@
         </section>
 
         <section id="groups" >
-            <div class="container center-flex groups">
+            <div class="container center-flex">
                 <h1>GRUPĖS</h1>
-                <div class="group-item">
-                    <img src="{% static 'images/example2/abacus-svgrepo-com.svg' %}" alt="Group Image 1">
-                    <h2>Matematikos Magai</h2>
-                    <div class="seperator"></div>
-                    <p>Ši grupė ugdo meilę skaičiams ir problemų sprendimui žaidžiant su abakusu.</p>
-                </div>
-                <div class="group-item">
-                    <img src="{% static 'images/example2/abc-svgrepo-com.svg' %}" alt="Group Image 2">
-                    <h2>Kalbos Tyrinėtojai</h2>
-                    <div class="seperator"></div>
-                    <p>Įsitraukite į pasakojimų ir kūrybinių žaidimų pasaulį, ugdydami skaitymo ir rašymo įgūdžius.</p>
-                </div>
-                <div class="group-item">
-                    <img src="{% static 'images/example2/soccer-ball-svgrepo-com.svg' %}" alt="Group Image 3">
-                    <h2>Sporto Čempionai</h2>
-                    <div class="seperator"></div>
-                    <p>Pasiruoškite sportui! Ši grupė skatina komandą ir fizinį aktyvumą žaidžiant futbolą.</p>
-                </div>
-                <div class="group-item">
-                    <img src="{% static 'images/example2/xylophone-svgrepo-com.svg' %}" alt="Group Image 4">
-                    <h2>Muzikos Virtuozai</h2>
-                    <div class="seperator"></div>
-                    <p>Vaikai pažįsta garsus ir ritmus, naudodami instrumentus, tokius kaip ksilofonas.</p>
-                </div>                
+                <div class="groups">
+                    <div class="group-item">
+                        <img src="{% static 'images/example2/abacus-svgrepo-com.svg' %}" alt="Group Image 1">
+                        <h2>Matematikos Magai</h2>
+                        <div class="seperator"></div>
+                        <p>Ši grupė ugdo meilę skaičiams ir problemų sprendimui žaidžiant su abakusu.</p>
+                    </div>
+                    <div class="group-item">
+                        <img src="{% static 'images/example2/abc-svgrepo-com.svg' %}" alt="Group Image 2">
+                        <h2>Kalbos Tyrinėtojai</h2>
+                        <div class="seperator"></div>
+                        <p>Įsitraukite į pasakojimų ir kūrybinių žaidimų pasaulį, ugdydami skaitymo ir rašymo įgūdžius.</p>
+                    </div>
+                    <div class="group-item">
+                        <img src="{% static 'images/example2/soccer-ball-svgrepo-com.svg' %}" alt="Group Image 3">
+                        <h2>Sporto Čempionai</h2>
+                        <div class="seperator"></div>
+                        <p>Pasiruoškite sportui! Ši grupė skatina komandą ir fizinį aktyvumą žaidžiant futbolą.</p>
+                    </div>
+                    <div class="group-item">
+                        <img src="{% static 'images/example2/xylophone-svgrepo-com.svg' %}" alt="Group Image 4">
+                        <h2>Muzikos Virtuozai</h2>
+                        <div class="seperator"></div>
+                        <p>Vaikai pažįsta garsus ir ritmus, naudodami instrumentus, tokius kaip ksilofonas.</p>
+                    </div>    
+                </div>            
             </div>
         </section>        
 
@@ -183,20 +187,22 @@
     </main>
     
     <footer>
-        <div class="container center-flex">
-            <!-- Social Media Icons -->
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
+        <section id="footer">
+            <div class="container center-flex">
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </div>
+                <p>&copy; 2024 Mokslinčius. Visos teisės saugomos.</p>
+                <p><a href="#header">Atgal į viršų</a></p>
+                <a href="#header"><img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img></a>
             </div>
-            <p>&copy; 2024 Mokslinčius. Visos teisės saugomos.</p>
-            <p><a href="#header">Atgal į viršų</a></p>
-            <a href="#header"><img class="logo" src={% static "images/example2/kindergarten-svgrepo-com.svg" %} alt="logo"></img></a>
-        </div>
+        </section>
     </footer>
     <script src="{% static 'js/example2.js' %}"></script>
 </body>

@@ -129,6 +129,7 @@ body {
 
 section {
     background-color: var(--active-bright-blue);
+    margin: auto;
 }
 
 section:nth-of-type(2n) {
@@ -147,7 +148,10 @@ button {
     color: white;
 }
 
-.container { padding: 16px; }
+.container { 
+    padding: 16px; 
+    max-width: 1100px;
+}
 
 section {scroll-margin-top: 70px; }
 
@@ -205,6 +209,10 @@ header {
     height: 82px;
 }
 
+div#header {
+    width: 100%;
+}
+
 /* ABOUT */
 
 #about .container {
@@ -223,6 +231,7 @@ header {
 
 .group-item {
     padding: 6px 18px;
+    max-width: 322px;
 }
 
 .group-item img , .admission-item img {
@@ -234,9 +243,6 @@ header {
     font-size: 28px;
 }
 
-.groups {
-    gap: 72px;
-}
 
 /* SCHEDULE */
 
@@ -294,6 +300,10 @@ footer .container p {
     font-size: 14px;
 }
 
+.map-section {
+    width: 100%;
+}
+
 
 /* Styles for larger screens */
 @media (min-width: 800px) {
@@ -307,6 +317,10 @@ footer .container p {
 
     #about .container {
         flex-direction: row-reverse;
+        height: calc(100vh - 82px);
+        min-height: 600px;
+        max-width: 1100px;
+        justify-content: space-around;
     }
 
     .hero-text {
@@ -321,19 +335,68 @@ footer .container p {
 
     .hero-img {
         position: absolute;
-        right: 0px;
+        right: 16px;
         max-width: 480px;
     }
 
     .groups {
-        max-width: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .group-item {
         justify-self: center;
+        margin: 72px 30px;
     }
 
     .admission-items {
         display: flex;
         flex-direction: row;
         gap: 12px;
+    }
+
+    .schedule-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Space between columns */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        max-width: 100%; /* Ensure it doesn’t expand beyond the container */
+        padding: 10px; /* Padding for inner scrolling area */
+        scroll-snap-type: x mandatory; /* Optional: Snap scrolling for smooth alignment */
+    }
+    
+    .schedule-column {
+        flex: 0 0 auto; /* Prevent shrinking and set columns fixed width */
+        width: 360px; /* Adjust column width as needed */
+        scroll-snap-align: start; /* Align columns to the start when scrolling */
+        padding: 15px;
+        border-radius: 8px; /* Optional: rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
+    
+    .schedule-grid::-webkit-scrollbar {
+        height: 12px; /* Horizontal scrollbar height */
+    }
+    
+    .schedule-grid::-webkit-scrollbar-track {
+        background-color: var(--active-bright-blue);
+    }
+
+
+    .schedule-grid::-webkit-scrollbar-thumb {
+        background-color: var(--active-orange);
+        border-radius: 10px;
+    }
+    
+    .schedule-grid::-webkit-scrollbar-thumb:hover {
+        background-color: #888; /* Darker thumb on hover */
+    }
+    
+    .message-section {
+        width: 50%;
     }
     /* 
     .admission-items {
@@ -374,39 +437,32 @@ footer .container p {
 }
 
 @media (min-width: 1200px) {
+
+    .groups {
+        flex-direction: row;
+    }
+
+    .group-item {
+        width: 360px;
+        margin: 72px 36px;
+    }
+
+    section[id] {
+        justify-items: center;
+    }
+
+    .hero-img {
+        max-width: 680px;
+        position: absolute;
+    }
+
+    .admission-items {
+        gap: 128px;
+    }
     
     /* .container {
         max-width: 1200px;
         margin: auto;
-    }
-
-    .nav-toggle-btn {
-        display: none; 
-    }
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        background: transparent;
-        width: auto;
-        padding: 0px;
-    }
-
-    .navbar-list {
-        display: flex;
-        flex-direction: row;
-        gap: 2em;
-    }
-
-    .navbar-link {
-        color: inherit;
-        padding: 0;
-        width: auto;
-        text-align: left;
-    }
-
-    .navbar-link p {
-        margin-bottom: 0px;
     }
 
     .container h1, .container h2 {
@@ -417,4 +473,15 @@ footer .container p {
     .conainer p {
         font-size: 38px;
     } */
+}
+
+@media (min-width: 1300px) {
+    .groups {
+        min-width: 1288px;
+    }
+
+    .group-item {
+        margin: 0px;
+    }
+
 }
