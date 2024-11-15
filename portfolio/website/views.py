@@ -49,11 +49,17 @@ def download_cv(request):
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 
+def default_example(request):
+    return render(request, 'default_example.html')
+
 def example1(request):
     return render(request, 'example1.html')
 
 def example2(request):
     return render(request, 'example2.html')
+
+def example3(request):
+    return render(request, 'example3.html')
 
 def fabric(request):
     return render(request, 'fabric.html')
