@@ -1,7 +1,65 @@
+/**
+ * navbar toggle
+ */
+const header = document.querySelector("[data-header]");
+const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
+
+if (header && navToggleBtn) {
+    navToggleBtn.addEventListener("click", function () {
+        header.classList.toggle("nav-active");
+        this.classList.toggle("active");
+    });
+}
+
+/**
+ * toggle the navbar when clicking any navbar link
+ */
+const navbarLinks = document.querySelectorAll("[data-nav-link]");
+
+if (navbarLinks.length > 0) {
+    navbarLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            if (header && navToggleBtn) {
+                header.classList.toggle("nav-active");
+                navToggleBtn.classList.toggle("active");
+            }
+        });
+    });
+}
+
+/**
+ * back to top & header
+ */
+const backTopBtn = document.querySelector("[data-back-to-top]");
+
+if (backTopBtn) {
+    window.addEventListener("scroll", function () {
+        if (window.scrollY >= 100) {
+            if (header) {
+                header.classList.add("active");
+            }
+            backTopBtn.classList.add("active");
+        } else {
+            if (header) {
+                header.classList.remove("active");
+            }
+            backTopBtn.classList.remove("active");
+        }
+    });
+}
+
+/**
+ * Gallery auto-slide and swipe functionality
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const gallery = document.querySelector('.gallery-main');
     const bubblesContainer = document.querySelector('.navigation');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (!gallery || !bubblesContainer || galleryItems.length === 0) {
+        return; // If gallery or necessary elements don't exist, exit early
+    }
+    
     let itemsPerView = window.innerWidth <= 600 ? 1 : 2; // 1 on mobile, 2 on larger screens
     let totalSlides = Math.ceil(galleryItems.length / itemsPerView);
     let currentIndex = 0;
