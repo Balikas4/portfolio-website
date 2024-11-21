@@ -16,7 +16,7 @@
 <body>
     <header class="header" data-header>
         <div class="container">
-            <a href="#about">
+            <a href="#top">
                 <img class="logo" src="{% static "images/example3/house.svg" %}" alt="logo"></img>
             </a>
 
@@ -29,10 +29,9 @@
             <!-- Navigation Links -->
             <nav class="navbar container">
                 <ul class="navbar-list">
-                    <li><a href="#about" class="navbar-link" data-nav-link><p>Apie Mus</p></a></li>
                     <li><a href="#education" class="navbar-link" data-nav-link><p>Ugdymas</p></a></li>
                     <li><a href="#gallery" class="navbar-link" data-nav-link><p>Galerija</p></a></li>
-                    <li><a href="#admission" class="navbar-link" data-nav-link><p>Priėmimas</p></a></li>
+                    <li><a href="#admission" class="navbar-link" data-nav-link><p>Komanda</p></a></li>
                     <li><a href="#contact" class="navbar-link" data-nav-link><p>Kontaktai</p></a></li>
                 </ul>
             </nav>
@@ -44,7 +43,7 @@
             <div class="container">
                 <div class="hero-text">
                     <h1>Šermukšnis</h1>
-                    <p>Čia mes smaigai leidžiame laiką</p>
+                    <p>Vaikų darželis Vilniuje</p>
                 </div>
             </div>
         </section>
@@ -60,8 +59,8 @@
                         <li><strong>C.</strong> Skatiname nuoseklų ir tęstinį mokymosi procesą.</li>
                     </ul>                    
                 </div>    
-                <div class="admission-item">
-                    <img class="education-img" src="{% static 'images/blocks-svgrepo-com 2.svg' %}" alt="Education 1">
+                <div class="education-item">
+                    <img class="education-img" src="{% static 'images/example3/kiddos.png' %}" alt="Education 1">
                 </div>
             </div>
         </section>
@@ -88,7 +87,7 @@
 
         <section id="admission">
             <div class="container">
-                <h2>Musu komanda</h2>
+                <h2>Mūsų komanda</h2>
                 <div class="admission-items">
                     <div class="admission-item">
                         <img src="{% static 'images/example3/cook1.svg' %}" alt="Admission Requirement 1">
@@ -109,22 +108,33 @@
         <section id="contact">
             <div class="container">
                 <h2>Susisiekime</h2>
-                
-                <div class="contact-content">
-                    <!-- Contact Form -->
-                    <form action="/submit-form" method="POST">
-                        <label for="name">Vardas:</label>
-                        <input type="text" id="name" name="name" required>
-                        
-                        <label for="email">El. paštas:</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <label for="message">Žinutė:</label>
-                        <textarea id="message" name="message" required></textarea>
-                        
-                        <button type="submit">Siųsti Žinutę</button>
-                    </form>
+                <div class="contact-section">
+                    <div class="contact-content">
+                        <!-- Contact Form -->
+                        <form action="/submit-form" method="POST">
+                            <label for="name">Vardas:</label>
+                            <input type="text" id="name" name="name" required>
+                            
+                            <label for="email">El. paštas:</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label for="message">Žinutė:</label>
+                            <textarea id="message" name="message" required></textarea>
+                            
+                            <button type="submit">Siųsti Žinutę</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Kontaktinė Informacija</h3>
+                        <p><a href="mailto:darzelis.sermuksnis@gmail.com">darzelis.sermuksnis@gmail.com</a></p>
+                        <p><a href="tel:+37060000000">+370 600 00000</a></p>
+                        <p>I - V : 8:00 - 18:00</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
                 <!-- Google Maps Section -->
                 <div class="map-section">
                     <h2>Mus rasite</h2>
@@ -148,7 +158,7 @@
         <div class="container center-text">
             <p>&copy; 2024 Darželis. Visos teisės saugomos.</p>
             <a href="#top" class="back-to-top" data-back-to-top>Atgal į viršų</a>
-            <a href="#about"><img class="logo" src="{% static "images/example3/house.svg" %}" alt="logo"></img></a>
+            <a href="#top"><img class="logo" src="{% static "images/example3/house.svg" %}" alt="logo"></img></a>
         </div>
     </footer>
     <script src="{% static 'js/example3.js' %}"></script>

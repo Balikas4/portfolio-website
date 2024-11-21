@@ -14,18 +14,18 @@ if (header && navToggleBtn) {
 /**
  * toggle the navbar when clicking any navbar link
  */
-const navbarLinks = document.querySelectorAll("[data-nav-link]");
+// const navbarLinks = document.querySelectorAll("[data-nav-link]");
 
-if (navbarLinks.length > 0) {
-    navbarLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            if (header && navToggleBtn) {
-                header.classList.toggle("nav-active");
-                navToggleBtn.classList.toggle("active");
-            }
-        });
-    });
-}
+// if (navbarLinks.length > 0) {
+//     navbarLinks.forEach(link => {
+//         link.addEventListener("click", function () {
+//             if (header && navToggleBtn) {
+//                 header.classList.toggle("nav-active");
+//                 navToggleBtn.classList.toggle("active");
+//             }
+//         });
+//     });
+// }
 
 /**
  * back to top & header

@@ -19,13 +19,6 @@
     
 
   
-  
-    /**
-     * shadow
-     */
-  
-    --shadow: 0 -5px 10px var(--grey);
-  
     /**
      * transition
      */
@@ -63,8 +56,9 @@ h1 {
 h2 {
     margin-bottom: 0px;
     font-family: var(--ff-source-han-jp-normal);
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
 }
 
 h3 {
@@ -118,7 +112,7 @@ section:nth-of-type(2n) {
     background-color: var(--my-color-2); /* Replace with your desired background color */
 }
 
-footer .container {
+footer {
     background-color: var(--my-color-1);
 }
 
@@ -138,7 +132,7 @@ iframe {
 
 .navbar {
   position: absolute;
-  top: 65px;
+  top: 82px;
   left: 0;
   width: 100%;
   padding-inline: 20px;
@@ -146,6 +140,12 @@ iframe {
   opacity: 0;
   transition: var(--transition-2);
 }
+
+.header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 .header.nav-active .navbar {
   visibility: visible;
@@ -177,9 +177,10 @@ button {
 .container { 
     padding: 16px; 
     max-width: 1100px;
+    margin-inline: auto;
 }
 
-section {scroll-margin-top: 70px; }
+section {scroll-margin-top: 82px; }
 
 
 .container p , .container label{
@@ -239,7 +240,6 @@ header .container {
     position: fixed;
     width: 100%;
     background-color: transparent;
-    box-shadow: var(--shadow);
     overflow: hidden;
     transition: 0.25s var(--cubic-out);
     z-index: 4;
@@ -288,7 +288,7 @@ header .container {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Subtle shadow */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .hero-section {
@@ -360,24 +360,161 @@ background-color: var(--white);
     border-radius: 20px;
 }
 
+/* Navigation Bubbles */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
 
+.bubble {
+    width: 10px;
+    height: 10px;
+    background-color: var(--my-color-2);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.bubble.active {
+    background-color: var(--my-color-accent);
+}
+
+/* ADMISSION */
+
+.admission-item p {
+    text-align: center;
+}
+
+.admission-items {
+    width: 50%;
+    justify-self: center;
+}
+
+/* CONTACT */
+
+.contact-content button {
+    background-color: var(--my-color-accent);
+}
+
+.contact-info {
+    text-align: center;
+}
+
+#contact .container {
+    text-align: center;
+}
+
+/* FOOTER */
+
+footer .container {
+    justify-items: center;
+}
 
 /* Styles for larger screens */
 @media (min-width: 800px) {
-    .navbar { all: unset; }
+
+    h1 {
+        font-size: 82px;
+    }
+
+    h2 {
+        font-size: 44px;
+        text-align: left;
+    }
+
+    .header .navbar.container {
+        position: relative;
+    }
+
+    .navbar { 
+        all: unset ;
+        background-color: transparent !important;
+    }
+
+    .navbar.container {
+        flex-direction: row-reverse;
+        width: calc(100% - 32px);
+        height: 50px;
+    }
   
     .navbar-list {
       display: flex;
       align-items: center;
       gap: 30px;
     }
-  
-    .navbar .btn {
-      margin-block-start: 0;
-      --padding: 7px 30px;
+
+    .navbar-link p {
+        margin-bottom: 0px;
     }
+
+    .contact-content {
+        width: 50%;
+        justify-self: center;
+        text-align: left;
+    }
+
+    .nav-toggle-btn {
+        display: none;
+    }
+
+    .navbar-container p {
+        margin-bottom: 0px;
+    }
+
+    .admission-items {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admission-item {
+        width: 30%;
+    }
+
+    #education .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .education-item , .text-box , .contact-content, .contact-info{
+        width: 50%;
+    }
+
+    .text-box {
+        align-content: center;
+    }
+
+    .contact-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contact-content {
+        text-align: center;
+        padding: 0px 20px;
+    }
+
 }
 
-@media (min-width: 1200px) {}
+@media (min-width: 1100px) {
+    .header div.container {
+        max-width: 100%;
+        padding-inline: calc((100% - 1068px) / 2);
+    }
+
+    footer .container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer p {
+        margin-bottom: 0px;
+    }
+}
 
 @media (min-width: 1400px) {}
