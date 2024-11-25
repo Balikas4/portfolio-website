@@ -33,13 +33,13 @@ def download_cv(request):
         pass
 
     # Send email notification when the CV is downloaded
-    send_mail(
-        subject='CV Download Notification',  # Subject of the email
-        message='Your CV has been downloaded from your website.',  # Body of the email
-        from_email='balikas4@gmail.com',  # From email
-        recipient_list=['balikas4@gmail.com'],  # List of recipients
-        fail_silently=False,  # Fail loudly on errors
-    )
+    # send_mail(
+    #     subject='CV Download Notification',  # Subject of the email
+    #     message='Your CV has been downloaded from your website.',  # Body of the email
+    #     from_email='balikas4@gmail.com',  # From email
+    #     recipient_list=['balikas4@gmail.com'],  # List of recipients
+    #     fail_silently=False,  # Fail loudly on errors
+    # )
 
     with open(cv_path, 'rb') as cv:
         response = HttpResponse(cv.read(), content_type='application/pdf')
