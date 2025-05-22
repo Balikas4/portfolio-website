@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.contrib.staticfiles import finders
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -9,17 +9,20 @@ def home(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
+            # Check honeypot field
+            if form.cleaned_data.get('honeypot'):
+                return HttpResponseBadRequest("Bot detected.")
+
             form.save()
-            # Send email notification
             send_mail(
-                subject='New Form Submission',  # Subject of the email
-                message='A new form has been submitted on your website.',  # Body of the email
-                from_email='balikas4@gmail.com',  # From email
-                recipient_list=['balikas4@gmail.com'],  # List of recipients
-                fail_silently=False,  # Fail loudly on errors
+                subject='New Form Submission',
+                message='A new form has been submitted on your website.',
+                from_email='balikas4@gmail.com',
+                recipient_list=['balikas4@gmail.com'],
+                fail_silently=False,
             )
             messages.success(request, 'Thank you! Your message has been sent.')
-            return redirect('home')  # Redirect to the same page to refresh
+            return redirect('home')
     else:
         form = EmailForm()
 
