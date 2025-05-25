@@ -712,7 +712,12 @@
     height: 1px;
     background-color: var(--white);
   }
-  
+
+  /* CAPTCHA styles */
+  .contact-recaptcha {
+    place-items: center;
+    margin-bottom: 15px;
+  }
   
   
   /*-----------------------------------*\

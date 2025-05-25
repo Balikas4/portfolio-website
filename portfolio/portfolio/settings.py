@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from .local_settings import SECRET_KEY, EMAIL_HOST_PASSWORD
+from .local_settings import SECRET_KEY, EMAIL_HOST_PASSWORD, RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +42,7 @@ ALLOWED_HOSTS = ['webdevbalys.online', 'www.webdevbalys.online', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_recaptcha',
     'website',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -111,6 +112,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#GOOGLE RECAPTCHA
+RECAPTCHA_PUBLIC_KEY = RECAPTCHA_PUBLIC_KEY
+RECAPTCHA_PRIVATE_KEY = RECAPTCHA_PRIVATE_KEY
+RECAPTCHA_USE_SSL = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

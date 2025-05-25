@@ -488,6 +488,9 @@
                 <div style="display: none;">
                     {{ form.honeypot }}
                 </div>
+                <div class="contact-recaptcha">
+                    {{ form.captcha }}
+                </div>
                 <button type="submit" class="btn-submit">Submit Message</button>
             </form>
 
@@ -712,6 +715,7 @@
       });
     });
   </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   {% comment %} <script>
     document.addEventListener('DOMContentLoaded', function() {
       const customButton = document.getElementById('custom-button');

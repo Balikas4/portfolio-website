@@ -1,8 +1,11 @@
 from django import forms
 from .models import Email
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV2Checkbox
 
 class EmailForm(forms.ModelForm):
     honeypot = forms.CharField(required=False, widget=forms.HiddenInput)
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
     class Meta:
         model = Email
